@@ -1,7 +1,6 @@
 cd $PSScriptRoot
 # https://technet.microsoft.com/en-us/library/cc957208.aspx This needs to be set to 0
 # Windows API ref https://msdn.microsoft.com/en-us/library/windows/desktop/ms633539(v=vs.85).aspx
-$title_needle = "Panel |"
 $title_needle = "Tablet "
 $oldvalue = ""
 
@@ -56,11 +55,13 @@ while ($true) {
 			if ($timestamp -ne $oldvalue) { $oldvalue = $timestamp }
 			else {
 				Logger "Kiosk page hung. Kill all bots!"
-				#Launch-Kiosk
+                Logger ("Title: " + $process.mainWindowTitle)
+				Launch-Kiosk
 			}
 		}
 		if ($title -ne $title_needle) {
 			Logger "Kiosk page not loaded! Kill all humans!"
+            Logger ("Title: " + $process.mainWindowTitle)
 			Launch-Kiosk
 		}
 	}
