@@ -1,0 +1,2 @@
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File %userprofile%\Desktop\powershell\monitor_chrome.ps1
+rem C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -command "Stop-Process -Processname Chrome -Force"
